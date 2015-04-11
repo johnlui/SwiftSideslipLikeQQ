@@ -10,6 +10,11 @@
 
 ![pic](http://lvwenhan.com/content/uploadfile/201504/274a1428736205.gif)
 
+####2. [再造 “手机QQ” 侧滑菜单（二）——高仿左视图](http://lvwenhan.com/ios/446.html)
+实现效果：
+
+![pic](http://lvwenhan.com/content/uploadfile/201504/068a1428761914.gif)
+
 
 有问题请直接在文章下面留言。
 
