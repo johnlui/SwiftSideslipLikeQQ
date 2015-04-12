@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 改变 StatusBar 颜色
+        application.statusBarStyle = UIStatusBarStyle.LightContent
+        
+        // 改变 navigation bar 的背景色
+        var navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.translucent = false
+        navigationBarAppearace.barTintColor = UIColor(hex: 0x25b6ed)
+        
+        navigationBarAppearace.tintColor = UIColor.whiteColor()
+        navigationBarAppearace.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        
         return true
     }
 

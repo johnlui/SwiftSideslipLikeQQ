@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var homeNavigationController: UINavigationController!
     var homeViewController: HomeViewController!
     var leftViewController: LeftViewController!
-    var mainView: UIView!
+    var mainView: UIView! // 构造主视图。实现 UINavigationController.view 和 HomeViewController.view 一起缩放。
     var distance: CGFloat = 0
     
     let FullDistance: CGFloat = 0.78
@@ -52,15 +53,24 @@ class ViewController: UIViewController {
         
         // 通过 StoryBoard 取出 HomeViewController 的 view，放在背景视图上面
         mainView = UIView(frame: self.view.frame)
-        homeViewController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController).viewControllers.first as! HomeViewController
+        homeNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
+        homeViewController = homeNavigationController.viewControllers.first as! HomeViewController
         mainView.addSubview(homeViewController.navigationController!.view)
         mainView.addSubview(homeViewController.view)
         self.view.addSubview(mainView)
         
+        homeViewController.navigationItem.leftBarButtonItem?.action = Selector("showLeft")
+        homeViewController.navigationItem.rightBarButtonItem?.action = Selector("showRight")
+        
         // 绑定 UIPanGestureRecognizer
-        let gesture = homeViewController.panGesture
-        mainView.addGestureRecognizer(gesture)
-        gesture.addTarget(self, action: Selector("pan:"))
+        let panGesture = homeViewController.panGesture
+        panGesture.addTarget(self, action: Selector("pan:"))
+        mainView.addGestureRecognizer(panGesture)
+        
+        // 绑定单击收起菜单
+        let tapGesture = UITapGestureRecognizer(target: self, action: "showHome")
+        mainView.addGestureRecognizer(tapGesture)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,28 +124,30 @@ class ViewController: UIViewController {
     // 展示左视图
     func showLeft() {
         distance = self.view.center.x * (FullDistance*2 + Proportion - 1)
-        blackCover.alpha = 0
-        doTheAnimate(self.Proportion, isShowLeft: true)
+        doTheAnimate(self.Proportion, showWhat: "left")
+        homeNavigationController.popToRootViewControllerAnimated(true)
     }
     // 展示主视图
     func showHome() {
         distance = 0
-        doTheAnimate(1)
+        doTheAnimate(1, showWhat: "home")
     }
     // 展示右视图
     func showRight() {
         distance = self.view.center.x * -(FullDistance*2 + Proportion - 1)
-        doTheAnimate(self.Proportion)
+        doTheAnimate(self.Proportion, showWhat: "right")
     }
     // 执行三种试图展示
-    func doTheAnimate(proportion: CGFloat, isShowLeft: Bool = false) {
+    func doTheAnimate(proportion: CGFloat, showWhat: String) {
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             self.mainView.center = CGPointMake(self.view.center.x + self.distance, self.view.center.y)
             self.mainView.transform = CGAffineTransformScale(CGAffineTransformIdentity, proportion, proportion)
-            if isShowLeft {
+            if showWhat == "left" {
                 self.leftViewController.view.center = CGPointMake(self.centerOfLeftViewAtBeginning.x + self.distanceOfLeftView, self.leftViewController.view.center.y)
                 self.leftViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.proportionOfLeftView, self.proportionOfLeftView)
             }
+            self.blackCover.alpha = showWhat == "home" ? 1 : 0
+            self.leftViewController.view.alpha = showWhat == "right" ? 0 : 1
             }, completion: nil)
     }
 

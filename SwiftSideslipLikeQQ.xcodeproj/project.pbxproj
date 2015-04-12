@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4642DDB51ADA76DA00D0F32B /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642DDB41ADA76DA00D0F32B /* SwiftColors.swift */; };
+		4642DDB71ADA7BAA00D0F32B /* OtherPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642DDB61ADA7BAA00D0F32B /* OtherPageViewController.swift */; };
 		4659330B1AD7F60700969878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659330A1AD7F60700969878 /* AppDelegate.swift */; };
 		4659330D1AD7F60700969878 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659330C1AD7F60700969878 /* ViewController.swift */; };
 		465933101AD7F60700969878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4659330E1AD7F60700969878 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4642DDB41ADA76DA00D0F32B /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
+		4642DDB61ADA7BAA00D0F32B /* OtherPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPageViewController.swift; sourceTree = "<group>"; };
 		465933051AD7F60700969878 /* SwiftSideslipLikeQQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSideslipLikeQQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		465933091AD7F60700969878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4659330A1AD7F60700969878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				466C008C1AD9071A002ED354 /* README.md */,
+				4642DDB41ADA76DA00D0F32B /* SwiftColors.swift */,
 				465933071AD7F60700969878 /* SwiftSideslipLikeQQ */,
 				4659331D1AD7F60700969878 /* SwiftSideslipLikeQQTests */,
 				465933061AD7F60700969878 /* Products */,
@@ -90,6 +95,7 @@
 				4659330C1AD7F60700969878 /* ViewController.swift */,
 				4659332A1AD7FB0E00969878 /* HomeViewController.swift */,
 				466C008E1AD92447002ED354 /* LeftViewController.swift */,
+				4642DDB61ADA7BAA00D0F32B /* OtherPageViewController.swift */,
 				4659330E1AD7F60700969878 /* Main.storyboard */,
 				465933111AD7F60700969878 /* Images.xcassets */,
 				465933131AD7F60700969878 /* LaunchScreen.xib */,
@@ -224,11 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4642DDB51ADA76DA00D0F32B /* SwiftColors.swift in Sources */,
 				466C00881AD832D9002ED354 /* Common.swift in Sources */,
 				4659330D1AD7F60700969878 /* ViewController.swift in Sources */,
 				466C008D1AD9071A002ED354 /* README.md in Sources */,
 				466C008F1AD92447002ED354 /* LeftViewController.swift in Sources */,
 				4659330B1AD7F60700969878 /* AppDelegate.swift in Sources */,
+				4642DDB71ADA7BAA00D0F32B /* OtherPageViewController.swift in Sources */,
 				4659332B1AD7FB0E00969878 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

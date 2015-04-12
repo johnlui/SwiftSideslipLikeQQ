@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SwiftSideslipLikeQQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="vXZ-lx-hvc" customClass="ViewController" customModule="SwiftSideslipLikeQQ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -22,6 +22,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="364" y="469"/>
+        </scene>
+        <!--Other Page View Controller-->
+        <scene sceneID="JTG-Ki-U0B">
+            <objects>
+                <viewController id="2Th-xs-mVQ" customClass="OtherPageViewController" customModule="SwiftSideslipLikeQQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gey-gu-kWu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Czl-jI-2uo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Sw-MK-t8c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ae-CP-23M">
+                                <rect key="frame" x="16" y="218" width="568" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Rso-Xt-WA9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.70588235290000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="2Ae-CP-23M" secondAttribute="centerX" id="ELi-dL-XPV"/>
+                            <constraint firstAttribute="centerY" secondItem="2Ae-CP-23M" secondAttribute="centerY" id="H93-cO-WSk"/>
+                            <constraint firstItem="2Ae-CP-23M" firstAttribute="leading" secondItem="6Sw-MK-t8c" secondAttribute="leadingMargin" id="UGs-TS-m9l"/>
+                            <constraint firstItem="2Ae-CP-23M" firstAttribute="top" secondItem="Gey-gu-kWu" secondAttribute="bottom" constant="218" id="g6o-xn-BkY"/>
+                            <constraint firstItem="2Ae-CP-23M" firstAttribute="trailing" secondItem="6Sw-MK-t8c" secondAttribute="trailingMargin" id="lWq-1y-Hdf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="g6o-xn-BkY"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="mainLabel" destination="2Ae-CP-23M" id="3I4-9r-XsF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xww-rG-CCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781" y="-300"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="BV4-6Z-rq0">
@@ -41,11 +86,11 @@
                                     <constraint firstAttribute="height" constant="100" id="ZJw-QX-Ns0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.70588235290000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.99607843139999996" green="0.70588235290000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="9J5-aG-t1H" firstAttribute="leading" secondItem="lDF-LK-YBN" secondAttribute="leadingMargin" id="Yic-FH-5AZ"/>
@@ -56,9 +101,13 @@
                             <outletCollection property="gestureRecognizers" destination="h3g-3R-WGf" appends="YES" id="N6b-cv-ujj"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="L2n-Xk-sjs"/>
+                    <navigationItem key="navigationItem" id="L2n-Xk-sjs">
+                        <barButtonItem key="leftBarButtonItem" image="qq" id="X2w-fB-3sQ"/>
+                        <barButtonItem key="rightBarButtonItem" image="xingxing" id="sFN-Lg-wuy"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="panGesture" destination="h3g-3R-WGf" id="gPD-qS-fl9"/>
+                        <segue destination="2Th-xs-mVQ" kind="show" identifier="showOtherPages" id="nbn-IX-pPI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFg-uQ-OTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -144,9 +193,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="settingBeTapped:" destination="CWV-Bi-whG" eventType="touchUpInside" id="ev0-2x-Is8"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flu-G5-rio">
                                 <rect key="frame" x="142" y="550" width="66" height="30"/>

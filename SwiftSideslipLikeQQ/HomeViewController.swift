@@ -9,12 +9,19 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    var titleOfOtherPages = ""
 
     @IBOutlet var panGesture: UIPanGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 设置中间 segmentView 视图
+        let segmentView = UISegmentedControl(items: ["消息", "电话"])
+        segmentView.selectedSegmentIndex = 0
+        segmentView.setWidth(60, forSegmentAtIndex: 0)
+        segmentView.setWidth(60, forSegmentAtIndex: 1)
+        self.navigationItem.titleView = segmentView
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,14 +30,17 @@ class HomeViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showOtherPages" {
+            if let a = segue.destinationViewController as? OtherPageViewController {
+                a.PageTitle = titleOfOtherPages
+            }
+        }
     }
-    */
+    
 
 }

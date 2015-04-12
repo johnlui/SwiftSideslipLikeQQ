@@ -33,11 +33,14 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func settingBeTapped(sender: AnyObject) {
-        println("点击了 设置")
-    }
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let viewController = UIApplication.sharedApplication().keyWindow?.rootViewController as! ViewController
+
+        viewController.homeViewController.titleOfOtherPages = titlesDictionary[indexPath.row]
+        viewController.homeViewController.performSegueWithIdentifier("showOtherPages", sender: self)
+        
+        viewController.showHome()
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     
