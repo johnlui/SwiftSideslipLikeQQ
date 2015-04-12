@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     var homeViewController: HomeViewController!
     var leftViewController: LeftViewController!
+    var mainView: UIView!
     var distance: CGFloat = 0
     
     let FullDistance: CGFloat = 0.78
@@ -50,11 +51,16 @@ class ViewController: UIViewController {
         self.view.addSubview(blackCover)
         
         // 通过 StoryBoard 取出 HomeViewController 的 view，放在背景视图上面
-        homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
-        self.view.addSubview(homeViewController.view)
+        mainView = UIView(frame: self.view.frame)
+        homeViewController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController).viewControllers.first as! HomeViewController
+        mainView.addSubview(homeViewController.navigationController!.view)
+        mainView.addSubview(homeViewController.view)
+        self.view.addSubview(mainView)
         
         // 绑定 UIPanGestureRecognizer
-        homeViewController.panGesture.addTarget(self, action: Selector("pan:"))
+        let gesture = homeViewController.panGesture
+        mainView.addGestureRecognizer(gesture)
+        gesture.addTarget(self, action: Selector("pan:"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -124,8 +130,8 @@ class ViewController: UIViewController {
     // 执行三种试图展示
     func doTheAnimate(proportion: CGFloat, isShowLeft: Bool = false) {
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-            self.homeViewController.view.center = CGPointMake(self.view.center.x + self.distance, self.view.center.y)
-            self.homeViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, proportion, proportion)
+            self.mainView.center = CGPointMake(self.view.center.x + self.distance, self.view.center.y)
+            self.mainView.transform = CGAffineTransformScale(CGAffineTransformIdentity, proportion, proportion)
             if isShowLeft {
                 self.leftViewController.view.center = CGPointMake(self.centerOfLeftViewAtBeginning.x + self.distanceOfLeftView, self.leftViewController.view.center.y)
                 self.leftViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.proportionOfLeftView, self.proportionOfLeftView)

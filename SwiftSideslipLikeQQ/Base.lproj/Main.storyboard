@@ -56,6 +56,7 @@
                             <outletCollection property="gestureRecognizers" destination="h3g-3R-WGf" appends="YES" id="N6b-cv-ujj"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="L2n-Xk-sjs"/>
                     <connections>
                         <outlet property="panGesture" destination="h3g-3R-WGf" id="gPD-qS-fl9"/>
                     </connections>
@@ -63,7 +64,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFg-uQ-OTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="h3g-3R-WGf"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="469"/>
+            <point key="canvasLocation" x="1781" y="469"/>
         </scene>
         <!--Left View Controller-->
         <scene sceneID="oCg-Ep-6dM">
@@ -197,7 +198,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVk-zP-VP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1653" y="469"/>
+            <point key="canvasLocation" x="2465" y="469"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PSG-zN-vhj">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="gya-Tl-k97" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jnf-pX-wRR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fx1-dH-sNI" kind="relationship" relationship="rootViewController" id="iT0-ij-kS3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kLH-GN-NSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="469"/>
         </scene>
     </scenes>
     <resources>
