@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>638A92D4-E7ED-492B-A10B-4FBA9A121445</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SwiftSideslipLikeQQ</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>B50A8E23391344F2DB4CCAF07401A5258B534E2C</key>
 		<string>github.com:johnlui/SwiftSideslipLikeQQ.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SwiftSideslipLikeQQ.xcodeproj</string>
+	<string>SwiftSideslipLikeQQ.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B50A8E23391344F2DB4CCAF07401A5258B534E2C</key>

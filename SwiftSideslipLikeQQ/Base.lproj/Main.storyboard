@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -263,6 +263,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLH-GN-NSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="469"/>
+        </scene>
+        <!--联系人-->
+        <scene sceneID="L9Y-cl-PJI">
+            <objects>
+                <viewController storyboardIdentifier="Contacts" title="联系人" id="nBo-Ya-JBc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5qT-l7-yly"/>
+                        <viewControllerLayoutGuide type="bottom" id="wl0-up-sXN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="77m-bO-mbG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyB-6H-WdI">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="n2x-LQ-0Ov"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="联系人" id="Qdx-AC-1tx"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6M-nl-GyN">
+                                <rect key="frame" x="16" y="250" width="568" height="100"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.70588235290000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CyB-6H-WdI" firstAttribute="leading" secondItem="77m-bO-mbG" secondAttribute="leading" id="6KJ-xs-Agp"/>
+                            <constraint firstItem="wl0-up-sXN" firstAttribute="top" secondItem="e6M-nl-GyN" secondAttribute="bottom" constant="250" id="6VL-Ea-pjQ"/>
+                            <constraint firstItem="e6M-nl-GyN" firstAttribute="centerX" secondItem="CyB-6H-WdI" secondAttribute="centerX" id="Hdq-Ch-Wpi"/>
+                            <constraint firstItem="CyB-6H-WdI" firstAttribute="top" secondItem="77m-bO-mbG" secondAttribute="top" id="KpU-cR-La0"/>
+                            <constraint firstAttribute="trailing" secondItem="CyB-6H-WdI" secondAttribute="trailing" id="Lmz-4P-ysb"/>
+                            <constraint firstItem="e6M-nl-GyN" firstAttribute="centerY" secondItem="77m-bO-mbG" secondAttribute="centerY" id="WaJ-lL-qkc"/>
+                            <constraint firstItem="e6M-nl-GyN" firstAttribute="leading" secondItem="77m-bO-mbG" secondAttribute="leadingMargin" id="jKo-gu-gvY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rzp-Za-cub" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="-300"/>
         </scene>
     </scenes>
     <resources>

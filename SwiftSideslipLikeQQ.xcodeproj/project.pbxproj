@@ -16,6 +16,8 @@
 		465933151AD7F60700969878 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 465933131AD7F60700969878 /* LaunchScreen.xib */; };
 		465933211AD7F60700969878 /* SwiftSideslipLikeQQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465933201AD7F60700969878 /* SwiftSideslipLikeQQTests.swift */; };
 		4659332B1AD7FB0E00969878 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659332A1AD7FB0E00969878 /* HomeViewController.swift */; };
+		46617ED61AF3E4C5008F038F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46617ED41AF3E4C5008F038F /* MainTabBarController.swift */; };
+		46617ED71AF3E4C5008F038F /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46617ED51AF3E4C5008F038F /* MainTabBarController.xib */; };
 		466C00881AD832D9002ED354 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C00871AD832D9002ED354 /* Common.swift */; };
 		466C008D1AD9071A002ED354 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 466C008C1AD9071A002ED354 /* README.md */; };
 		466C008F1AD92447002ED354 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C008E1AD92447002ED354 /* LeftViewController.swift */; };
@@ -45,6 +47,8 @@
 		4659331F1AD7F60700969878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		465933201AD7F60700969878 /* SwiftSideslipLikeQQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSideslipLikeQQTests.swift; sourceTree = "<group>"; };
 		4659332A1AD7FB0E00969878 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		46617ED41AF3E4C5008F038F /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		46617ED51AF3E4C5008F038F /* MainTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTabBarController.xib; sourceTree = "<group>"; };
 		466C00871AD832D9002ED354 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		466C008C1AD9071A002ED354 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		466C008E1AD92447002ED354 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				465933131AD7F60700969878 /* LaunchScreen.xib */,
 				465933081AD7F60700969878 /* Supporting Files */,
 				466C00871AD832D9002ED354 /* Common.swift */,
+				46617ED41AF3E4C5008F038F /* MainTabBarController.swift */,
+				46617ED51AF3E4C5008F038F /* MainTabBarController.xib */,
 			);
 			path = SwiftSideslipLikeQQ;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 			files = (
 				465933101AD7F60700969878 /* Main.storyboard in Resources */,
 				465933151AD7F60700969878 /* LaunchScreen.xib in Resources */,
+				46617ED71AF3E4C5008F038F /* MainTabBarController.xib in Resources */,
 				465933121AD7F60700969878 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +239,7 @@
 			files = (
 				4642DDB51ADA76DA00D0F32B /* SwiftColors.swift in Sources */,
 				466C00881AD832D9002ED354 /* Common.swift in Sources */,
+				46617ED61AF3E4C5008F038F /* MainTabBarController.swift in Sources */,
 				4659330D1AD7F60700969878 /* ViewController.swift in Sources */,
 				466C008D1AD9071A002ED354 /* README.md in Sources */,
 				466C008F1AD92447002ED354 /* LeftViewController.swift in Sources */,

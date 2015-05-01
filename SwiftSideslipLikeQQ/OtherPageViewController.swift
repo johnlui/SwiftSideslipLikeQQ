@@ -35,6 +35,7 @@ class OtherPageViewController: UIViewController {
     
     func goBack() {
         self.navigationController?.popViewControllerAnimated(true)
+        Common.rootViewController.mainTabBarController.tabBar.hidden = false
     }
 
     /*

@@ -34,13 +34,13 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let viewController = UIApplication.sharedApplication().keyWindow?.rootViewController as! ViewController
-
+        let viewController = Common.rootViewController
         viewController.homeViewController.titleOfOtherPages = titlesDictionary[indexPath.row]
         viewController.homeViewController.performSegueWithIdentifier("showOtherPages", sender: self)
-        
+        Common.contactsVC.view.removeFromSuperview()
+        viewController.mainTabBarController.tabBar.hidden = true
+        viewController.mainTabBarController.selectedIndex = 0
         viewController.showHome()
-        
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     

@@ -23,6 +23,11 @@
 
 ![pic](http://lvwenhan.com/content/uploadfile/201504/8f171428840820.gif)
 
+###番外篇：【再造 “手机QQ” 侧滑菜单（四）——增加 TabBar】较简单不再成文。
+实现效果：
+
+![pic](http://staticonsae.sinaapp.com/images/9.gif)
+
 
 有问题请直接在文章下面留言。
 

@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var mainTabBarController: MainTabBarController!
+    var tapGesture: UITapGestureRecognizer!
+    
     var homeNavigationController: UINavigationController!
     var homeViewController: HomeViewController!
     var leftViewController: LeftViewController!
@@ -53,10 +56,20 @@ class ViewController: UIViewController {
         
         // 通过 StoryBoard 取出 HomeViewController 的 view，放在背景视图上面
         mainView = UIView(frame: self.view.frame)
+        
+        let nibContents = NSBundle.mainBundle().loadNibNamed("MainTabBarController", owner: nil, options: nil)
+        mainTabBarController = nibContents.first as! MainTabBarController
+        
+        let tabBarView = mainTabBarController.view
+        mainView.addSubview(tabBarView)
+        
         homeNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
         homeViewController = homeNavigationController.viewControllers.first as! HomeViewController
-        mainView.addSubview(homeViewController.navigationController!.view)
-        mainView.addSubview(homeViewController.view)
+        tabBarView.addSubview(homeViewController.navigationController!.view)
+        tabBarView.addSubview(homeViewController.view)
+        
+        tabBarView.bringSubviewToFront(mainTabBarController.tabBar)
+        
         self.view.addSubview(mainView)
         
         homeViewController.navigationItem.leftBarButtonItem?.action = Selector("showLeft")
@@ -67,10 +80,8 @@ class ViewController: UIViewController {
         panGesture.addTarget(self, action: Selector("pan:"))
         mainView.addGestureRecognizer(panGesture)
         
-        // 绑定单击收起菜单
-        let tapGesture = UITapGestureRecognizer(target: self, action: "showHome")
-        mainView.addGestureRecognizer(tapGesture)
-        
+        // 生成单击收起菜单手势
+        tapGesture = UITapGestureRecognizer(target: self, action: "showHome")
     }
 
     override func didReceiveMemoryWarning() {
@@ -123,17 +134,20 @@ class ViewController: UIViewController {
     
     // 展示左视图
     func showLeft() {
+        mainView.addGestureRecognizer(tapGesture)
         distance = self.view.center.x * (FullDistance*2 + Proportion - 1)
         doTheAnimate(self.Proportion, showWhat: "left")
         homeNavigationController.popToRootViewControllerAnimated(true)
     }
     // 展示主视图
     func showHome() {
+        mainView.removeGestureRecognizer(tapGesture)
         distance = 0
         doTheAnimate(1, showWhat: "home")
     }
     // 展示右视图
     func showRight() {
+        mainView.addGestureRecognizer(tapGesture)
         distance = self.view.center.x * -(FullDistance*2 + Proportion - 1)
         doTheAnimate(self.Proportion, showWhat: "right")
     }
