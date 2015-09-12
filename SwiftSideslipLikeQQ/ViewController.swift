@@ -17,33 +17,38 @@ class ViewController: UIViewController {
     // 主界面点击手势，用于在菜单划出状态下点击主页后自动关闭菜单
     var tapGesture: UITapGestureRecognizer!
     
+    // 首页的 Navigation Bar 的提供者，是首页的容器
     var homeNavigationController: UINavigationController!
+    // 首页中间的主要视图的来源
     var homeViewController: HomeViewController!
+    // 侧滑菜单视图的来源
     var leftViewController: LeftViewController!
     
-    // 构造主视图。实现 UINavigationController.view 和 HomeViewController.view 一起缩放。
+    // 构造主视图，实现 UINavigationController.view 和 HomeViewController.view 一起缩放
     var mainView: UIView!
-    var distance: CGFloat = 0
     
+    // 侧滑所需参数
+    var distance: CGFloat = 0
     let FullDistance: CGFloat = 0.78
     let Proportion: CGFloat = 0.77
-    
-    var blackCover: UIView!
-    
     var centerOfLeftViewAtBeginning: CGPoint!
     var proportionOfLeftView: CGFloat = 1
     var distanceOfLeftView: CGFloat = 50
-
+    
+    // 侧滑菜单黑色半透明遮罩层
+    var blackCover: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 给主视图设置背景
+        // 给根容器设置背景
         let imageView = UIImageView(image: UIImage(named: "back"))
         imageView.frame = UIScreen.mainScreen().bounds
         self.view.addSubview(imageView)
         
-        // 通过 StoryBoard 取出 LeftViewController
+        // 通过 StoryBoard 取出左侧侧滑菜单视图
         leftViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LeftViewController") as! LeftViewController
+        // 适配 4.7 和 5.5 寸屏幕的缩放操作，有偶发性小 bug
         if Common.screenWidth > 320 {
             proportionOfLeftView = Common.screenWidth / 320
             distanceOfLeftView += (Common.screenWidth - 320) * FullDistance / 2
@@ -51,11 +56,12 @@ class ViewController: UIViewController {
         leftViewController.view.center = CGPointMake(leftViewController.view.center.x - 50, leftViewController.view.center.y)
         leftViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.8, 0.8)
         
+        // 动画参数初始化
         centerOfLeftViewAtBeginning = leftViewController.view.center
-        
+        // 把侧滑菜单视图加入根容器
         self.view.addSubview(leftViewController.view)
         
-        // 增加黑色遮罩层，实现视差特效
+        // 在侧滑菜单之上增加黑色遮罩层，目的是实现视差特效
         blackCover = UIView(frame: CGRectOffset(self.view.frame, 0, 0))
         blackCover.backgroundColor = UIColor.blackColor()
         self.view.addSubview(blackCover)
