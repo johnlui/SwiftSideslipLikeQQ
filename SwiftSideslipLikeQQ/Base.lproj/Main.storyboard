@@ -291,8 +291,8 @@
                                     <navigationItem title="联系人" id="Qdx-AC-1tx"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6M-nl-GyN">
-                                <rect key="frame" x="16" y="250" width="568" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6M-nl-GyN">
+                                <rect key="frame" x="20" y="250" width="560" height="100"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" red="0.99607843139999996" green="0.70588235290000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

@@ -8,15 +8,21 @@
 
 import UIKit
 
+// 此 View Controller 为根容器，本身并不包含任何 UI 元素
 class ViewController: UIViewController {
     
+    // 该 TabBar Controller 不是传统意义上的容器，在此只负责提供 UITabBar 这个 UI 组件
     var mainTabBarController: MainTabBarController!
+    
+    // 主界面点击手势，用于在菜单划出状态下点击主页后自动关闭菜单
     var tapGesture: UITapGestureRecognizer!
     
     var homeNavigationController: UINavigationController!
     var homeViewController: HomeViewController!
     var leftViewController: LeftViewController!
-    var mainView: UIView! // 构造主视图。实现 UINavigationController.view 和 HomeViewController.view 一起缩放。
+    
+    // 构造主视图。实现 UINavigationController.view 和 HomeViewController.view 一起缩放。
+    var mainView: UIView!
     var distance: CGFloat = 0
     
     let FullDistance: CGFloat = 0.78
