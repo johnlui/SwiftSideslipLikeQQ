@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TabBar Controller，主页所有内容的父容器
 class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
@@ -21,11 +22,13 @@ class MainTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    // 覆写了 TabBar 的点击效果
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         switch item.tag {
         case 0:
             Common.contactsVC.view.removeFromSuperview()
         case 1:
+            // 这里为了省事采用了简单的 addSubView 方案，真正项目中应该采用 TabBar Controller 自带的 self.viewControllers 方案
             Common.rootViewController.mainTabBarController.view.addSubview(Common.contactsVC.view)
             Common.rootViewController.mainTabBarController.view.bringSubviewToFront(Common.rootViewController.mainTabBarController.tabBar)
         case 2:

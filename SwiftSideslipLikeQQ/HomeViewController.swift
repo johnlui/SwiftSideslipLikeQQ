@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 主页
 class HomeViewController: UIViewController {
     
     var titleOfOtherPages = ""

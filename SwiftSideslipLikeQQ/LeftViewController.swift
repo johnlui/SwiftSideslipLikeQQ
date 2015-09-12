@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 侧滑菜单 View Controller
 class LeftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let titlesDictionary = ["开通会员", "QQ钱包", "网上营业厅", "个性装扮", "我的收藏", "我的相册", "我的文件"]
@@ -33,6 +34,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    // 处理点击事件
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewController = Common.rootViewController
         viewController.homeViewController.titleOfOtherPages = titlesDictionary[indexPath.row]

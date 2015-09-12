@@ -8,6 +8,7 @@
 
 import UIKit
 
+// 点击侧滑菜单中的条目，主页跳转到的 View Controller
 class OtherPageViewController: UIViewController {
     
     var PageTitle: String! // 从 HomeViewController 传递过来的值

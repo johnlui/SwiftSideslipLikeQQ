@@ -9,6 +9,7 @@
 import UIKit
 
 struct Common {
+    // Swift 中， static let 才是真正可靠好用的单例模式
     static let screenWidth = UIScreen.mainScreen().applicationFrame.maxX
     static let screenHeight = UIScreen.mainScreen().applicationFrame.maxY
     static let rootViewController = UIApplication.sharedApplication().keyWindow?.rootViewController as! ViewController
