@@ -66,28 +66,34 @@ class ViewController: UIViewController {
         blackCover.backgroundColor = UIColor.blackColor()
         self.view.addSubview(blackCover)
         
-        // 通过 StoryBoard 取出 HomeViewController 的 view，放在背景视图上面
+        // 初始化主视图，即包含 TabBar、NavigationBar和首页的总视图
         mainView = UIView(frame: self.view.frame)
-        
+        // 初始化 TabBar
         let nibContents = NSBundle.mainBundle().loadNibNamed("MainTabBarController", owner: nil, options: nil)
         mainTabBarController = nibContents.first as! MainTabBarController
-        
+        // 取出 TabBar Controller 的视图加入主视图
         let tabBarView = mainTabBarController.view
         mainView.addSubview(tabBarView)
-        
+        // 从 StoryBoard 取出首页的 Navigation Controller
         homeNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("HomeNavigationController") as! UINavigationController
+        // 从 StoryBoard 初始化而来的 Navigation Controller 会自动初始化他的 Root View Controller，即 HomeViewController
+        // 我们将其（指针）取出，赋给容器 View Controller 的成员变量 homeViewController
         homeViewController = homeNavigationController.viewControllers.first as! HomeViewController
+        // 分别将 Navigation Bar 和 homeViewController 的视图加入 TabBar Controller 的视图
         tabBarView.addSubview(homeViewController.navigationController!.view)
         tabBarView.addSubview(homeViewController.view)
         
+        // 在 TabBar Controller 的视图中，将 TabBar 视图提到最表层
         tabBarView.bringSubviewToFront(mainTabBarController.tabBar)
         
+        // 将主视图加入容器
         self.view.addSubview(mainView)
         
+        // 分别指定 Navigation Bar 左右两侧按钮的事件
         homeViewController.navigationItem.leftBarButtonItem?.action = Selector("showLeft")
         homeViewController.navigationItem.rightBarButtonItem?.action = Selector("showRight")
         
-        // 绑定 UIPanGestureRecognizer
+        // 给主视图绑定 UIPanGestureRecognizer
         let panGesture = homeViewController.panGesture
         panGesture.addTarget(self, action: Selector("pan:"))
         mainView.addGestureRecognizer(panGesture)
@@ -146,33 +152,46 @@ class ViewController: UIViewController {
     
     // 展示左视图
     func showLeft() {
+        // 给首页 加入 点击自动关闭侧滑菜单功能
         mainView.addGestureRecognizer(tapGesture)
+        // 计算距离，执行菜单自动滑动动画
         distance = self.view.center.x * (FullDistance*2 + Proportion - 1)
         doTheAnimate(self.Proportion, showWhat: "left")
         homeNavigationController.popToRootViewControllerAnimated(true)
     }
     // 展示主视图
     func showHome() {
+        // 从首页 删除 点击自动关闭侧滑菜单功能
         mainView.removeGestureRecognizer(tapGesture)
+        // 计算距离，执行菜单自动滑动动画
         distance = 0
         doTheAnimate(1, showWhat: "home")
     }
     // 展示右视图
     func showRight() {
+        // 给首页 加入 点击自动关闭侧滑菜单功能
         mainView.addGestureRecognizer(tapGesture)
+        // 计算距离，执行菜单自动滑动动画
         distance = self.view.center.x * -(FullDistance*2 + Proportion - 1)
         doTheAnimate(self.Proportion, showWhat: "right")
     }
-    // 执行三种试图展示
+    // 执行三种动画：显示左侧菜单、显示主页、显示右侧菜单
     func doTheAnimate(proportion: CGFloat, showWhat: String) {
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            // 移动首页中心
             self.mainView.center = CGPointMake(self.view.center.x + self.distance, self.view.center.y)
+            // 缩放首页
             self.mainView.transform = CGAffineTransformScale(CGAffineTransformIdentity, proportion, proportion)
             if showWhat == "left" {
+                // 移动左侧菜单的中心
                 self.leftViewController.view.center = CGPointMake(self.centerOfLeftViewAtBeginning.x + self.distanceOfLeftView, self.leftViewController.view.center.y)
+                // 缩放左侧菜单
                 self.leftViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, self.proportionOfLeftView, self.proportionOfLeftView)
             }
+            // 改变黑色遮罩层的透明度，实现视差效果
             self.blackCover.alpha = showWhat == "home" ? 1 : 0
+
+            // 为了演示效果，在右侧菜单划出时隐藏漏出的左侧菜单，并无实际意义
             self.leftViewController.view.alpha = showWhat == "right" ? 0 : 1
             }, completion: nil)
     }
