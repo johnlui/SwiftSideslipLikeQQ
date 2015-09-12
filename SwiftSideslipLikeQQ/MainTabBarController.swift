@@ -21,7 +21,7 @@ class MainTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
         switch item.tag {
         case 0:
             Common.contactsVC.view.removeFromSuperview()
@@ -29,7 +29,7 @@ class MainTabBarController: UITabBarController {
             Common.rootViewController.mainTabBarController.view.addSubview(Common.contactsVC.view)
             Common.rootViewController.mainTabBarController.view.bringSubviewToFront(Common.rootViewController.mainTabBarController.tabBar)
         case 2:
-            println("Just like case 1 ↑")
+            print("Just like case 1 ↑")
         default:
             break
         }

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.statusBarStyle = UIStatusBarStyle.LightContent
         
         // 改变 navigation bar 的背景色
-        var navigationBarAppearace = UINavigationBar.appearance()
+        let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.translucent = false
         navigationBarAppearace.barTintColor = UIColor(hex: 0x25b6ed)
         
