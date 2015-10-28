@@ -3,8 +3,8 @@
 
 ###开发环境
 
-* Xcode 7.0 GM / Swift 2.0
-* 支持 Xcode 6.3 的[旧版本](https://github.com/johnlui/SwiftSideslipLikeQQ/releases/tag/v2.1)
+* Xcode 7.0+ / Swift 2.0+
+* 支持 Xcode 6 的[旧版本](https://github.com/johnlui/SwiftSideslipLikeQQ/releases/tag/v2.1)
 
 ###文章链接
 
