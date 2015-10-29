@@ -19,7 +19,6 @@
 		46617ED61AF3E4C5008F038F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46617ED41AF3E4C5008F038F /* MainTabBarController.swift */; };
 		46617ED71AF3E4C5008F038F /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46617ED51AF3E4C5008F038F /* MainTabBarController.xib */; };
 		466C00881AD832D9002ED354 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C00871AD832D9002ED354 /* Common.swift */; };
-		466C008D1AD9071A002ED354 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 466C008C1AD9071A002ED354 /* README.md */; };
 		466C008F1AD92447002ED354 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C008E1AD92447002ED354 /* LeftViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		46617ED41AF3E4C5008F038F /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		46617ED51AF3E4C5008F038F /* MainTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTabBarController.xib; sourceTree = "<group>"; };
 		466C00871AD832D9002ED354 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		466C008C1AD9071A002ED354 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		466C008E1AD92447002ED354 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +73,6 @@
 		465932FC1AD7F60700969878 = {
 			isa = PBXGroup;
 			children = (
-				466C008C1AD9071A002ED354 /* README.md */,
 				4642DDB41ADA76DA00D0F32B /* SwiftColors.swift */,
 				465933071AD7F60700969878 /* SwiftSideslipLikeQQ */,
 				4659331D1AD7F60700969878 /* SwiftSideslipLikeQQTests */,
@@ -243,7 +240,6 @@
 				466C00881AD832D9002ED354 /* Common.swift in Sources */,
 				46617ED61AF3E4C5008F038F /* MainTabBarController.swift in Sources */,
 				4659330D1AD7F60700969878 /* ViewController.swift in Sources */,
-				466C008D1AD9071A002ED354 /* README.md in Sources */,
 				466C008F1AD92447002ED354 /* LeftViewController.swift in Sources */,
 				4659330B1AD7F60700969878 /* AppDelegate.swift in Sources */,
 				4642DDB71ADA7BAA00D0F32B /* OtherPageViewController.swift in Sources */,
