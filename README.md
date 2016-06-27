@@ -11,22 +11,22 @@
 ####1. [再造 “手机QQ” 侧滑效果（一）——实现侧滑效果](http://lvwenhan.com/ios/445.html)
 实现效果：
 
-![pic](http://lvwenhan.com/content/uploadfile/201504/274a1428736205.gif)
+![pic](https://github.com/johnlui/SwiftSideslipLikeQQ/blob/master/assets/274a1428736205.gif)
 
 ####2. [再造 “手机QQ” 侧滑菜单（二）——高仿左视图](http://lvwenhan.com/ios/446.html)
 实现效果：
 
-![pic](http://lvwenhan.com/content/uploadfile/201504/068a1428761914.gif)
+![pic](https://github.com/johnlui/SwiftSideslipLikeQQ/blob/master/assets/068a1428761914.gif)
 
 ####3. [再造 “手机QQ” 侧滑菜单（三）——视图联动](http://lvwenhan.com/ios/447.html)
 实现效果：
 
-![pic](http://lvwenhan.com/content/uploadfile/201504/8f171428840820.gif)
+![pic](https://github.com/johnlui/SwiftSideslipLikeQQ/blob/master/assets/8f171428840820.gif)
 
 ###番外篇：【再造 “手机QQ” 侧滑菜单（四）——增加 TabBar】较简单不再成文。
 实现效果：
 
-![pic](http://staticonsae.sinaapp.com/images/9.gif)
+![pic](https://github.com/johnlui/SwiftSideslipLikeQQ/blob/master/assets/9.gif)
 
 
 有问题请直接在文章下面留言。
