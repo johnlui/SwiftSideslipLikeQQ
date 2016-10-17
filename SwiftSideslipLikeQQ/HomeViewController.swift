@@ -20,8 +20,8 @@ class HomeViewController: UIViewController {
         // 设置中间 segmentView 视图
         let segmentView = UISegmentedControl(items: ["消息", "电话"])
         segmentView.selectedSegmentIndex = 0
-        segmentView.setWidth(60, forSegmentAtIndex: 0)
-        segmentView.setWidth(60, forSegmentAtIndex: 1)
+        segmentView.setWidth(60, forSegmentAt: 0)
+        segmentView.setWidth(60, forSegmentAt: 1)
         self.navigationItem.titleView = segmentView
     }
 
@@ -35,9 +35,9 @@ class HomeViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showOtherPages" {
-            if let a = segue.destinationViewController as? OtherPageViewController {
+            if let a = segue.destination as? OtherPageViewController {
                 a.PageTitle = titleOfOtherPages
             }
         }

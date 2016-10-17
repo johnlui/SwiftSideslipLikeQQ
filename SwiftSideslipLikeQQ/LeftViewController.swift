@@ -26,7 +26,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
         settingTableView.tableFooterView = UIView()
         
         heightLayoutConstraintOfSettingTableView.constant = Common.screenHeight < 500 ? Common.screenHeight * (568 - 221) / 568 : 347
-        self.view.frame = CGRectMake(0, 0, 320 * 0.78, Common.screenHeight)
+        self.view.frame = CGRect(x: 0, y: 0, width: 320 * 0.78, height: Common.screenHeight)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,29 +35,29 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // 处理点击事件
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = Common.rootViewController
-        viewController.homeViewController.titleOfOtherPages = titlesDictionary[indexPath.row]
-        viewController.homeViewController.performSegueWithIdentifier("showOtherPages", sender: self)
+        viewController.homeViewController.titleOfOtherPages = titlesDictionary[(indexPath as NSIndexPath).row]
+        viewController.homeViewController.performSegue(withIdentifier: "showOtherPages", sender: self)
         Common.contactsVC.view.removeFromSuperview()
-        viewController.mainTabBarController.tabBar.hidden = true
+        viewController.mainTabBarController.tabBar.isHidden = true
         viewController.mainTabBarController.selectedIndex = 0
         viewController.showHome()
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 7
     }
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("leftViewCell", forIndexPath: indexPath) 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "leftViewCell", for: indexPath) 
         
-        cell.backgroundColor = UIColor.clearColor()
-        cell.textLabel!.text = titlesDictionary[indexPath.row]
+        cell.backgroundColor = UIColor.clear
+        cell.textLabel!.text = titlesDictionary[(indexPath as NSIndexPath).row]
         
         return cell
     }

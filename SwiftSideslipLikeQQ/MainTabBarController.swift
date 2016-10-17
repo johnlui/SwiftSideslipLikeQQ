@@ -23,14 +23,14 @@ class MainTabBarController: UITabBarController {
     }
     
     // 覆写了 TabBar 的点击效果
-    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 0:
             Common.contactsVC.view.removeFromSuperview()
         case 1:
             // 这里为了省事采用了简单的 addSubView 方案，真正项目中应该采用 TabBar Controller 自带的 self.viewControllers 方案
             Common.rootViewController.mainTabBarController.view.addSubview(Common.contactsVC.view)
-            Common.rootViewController.mainTabBarController.view.bringSubviewToFront(Common.rootViewController.mainTabBarController.tabBar)
+            Common.rootViewController.mainTabBarController.view.bringSubview(toFront: Common.rootViewController.mainTabBarController.tabBar)
         case 2:
             print("Just like case 1 ↑")
         default:

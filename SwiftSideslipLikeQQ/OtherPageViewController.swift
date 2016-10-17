@@ -21,11 +21,11 @@ class OtherPageViewController: UIViewController {
         mainLabel.text = PageTitle
         
         // 自定义返回按钮
-        let backButton = UIBarButtonItem(title: "く返回", style: UIBarButtonItemStyle.Plain, target: self, action: "goBack")
+        let backButton = UIBarButtonItem(title: "く返回", style: UIBarButtonItemStyle.plain, target: self, action: #selector(OtherPageViewController.goBack))
         self.navigationItem.leftBarButtonItem = backButton
         
         // 弥补因为返回按钮被替换导致的边缘滑入手势失效的问题
-        let gesture = UIPanGestureRecognizer(target: self, action: "goBack")
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(OtherPageViewController.goBack))
         self.view.addGestureRecognizer(gesture)
     }
 
@@ -35,8 +35,8 @@ class OtherPageViewController: UIViewController {
     }
     
     func goBack() {
-        self.navigationController?.popViewControllerAnimated(true)
-        Common.rootViewController.mainTabBarController.tabBar.hidden = false
+        _ = self.navigationController?.popViewController(animated: true)
+        Common.rootViewController.mainTabBarController.tabBar.isHidden = false
     }
 
     /*
